@@ -4,4 +4,47 @@ html {
 
 *, *::before, *::after {
 	box-sizing: inherit;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: rgb(50, 50, 50);
+	color: azure;
+	font-family: Roboto, Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	margin: 20px;
+}
+
+.gridSize {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	margin: 10px;
+}
+
+.gridSize label {
+	text-align: center;
+}
+
+#sketchContainer{
+	background-color: darkgray;
+	border: 5px;
+	border-style: solid;
+	border-color: white;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: content-box;
+}
+
+.block {
+	background-color: rgb(235, 235, 235);
+	border: 1px;
+	border-style: solid;
+	border-color: rgb(15, 15, 15);
+	width: 15px;
+	height: 15px;
+	box-sizing: border-box;
 }
