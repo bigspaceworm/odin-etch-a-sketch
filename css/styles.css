@@ -48,3 +48,7 @@ body {
 	height: 15px;
 	box-sizing: border-box;
 }
+
+.blockChangeColor {
+	background-color: rgb(25, 25, 25);
+}

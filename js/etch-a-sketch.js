@@ -15,6 +15,8 @@ function createGrid(gridSize) {
 
 		sketchContainer.appendChild(block);
 	}
+
+	gridColorChange();
 }
 
 function clearGrid() {
@@ -36,3 +38,15 @@ btnGetSize.addEventListener("click", () => {
 	clearGrid();
 	createGrid(getGridSize());
 });
+
+function gridColorChange(){
+	const gridBlocks = sketchContainer.querySelectorAll("div");
+
+	gridBlocks.forEach((div) => {
+		div.addEventListener("mouseover", () => {
+			if(div.classList.contains("block")){
+				div.classList.add("blockChangeColor");
+			}
+		});
+	});
+}
