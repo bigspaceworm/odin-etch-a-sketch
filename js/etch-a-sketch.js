@@ -1,17 +1,24 @@
 const BLOCK_SIZE = 15;
+const GRID_SIDE = 550;
 const sketchContainer = document.querySelector("#sketchContainer");
+sketchContainer.style.height = GRID_SIDE + "px";
+sketchContainer.style.width = GRID_SIDE + "px";
+
 // Initial grid
 createGrid(16);
 
 function createGrid(gridSize) {
-	const containerSize = (gridSize * BLOCK_SIZE);
+	// const containerSize = (gridSize * BLOCK_SIZE);
 
-	sketchContainer.style.height = containerSize + "px";
-	sketchContainer.style.width = containerSize + "px";
+	// sketchContainer.style.height = containerSize + "px";
+	// sketchContainer.style.width = containerSize + "px";
+	let blockSide = GRID_SIDE / gridSize;
 
 	for(let i = 0; i < gridSize * gridSize; i++){
 		const block = document.createElement("div");
 		block.classList.add("block");
+		block.style.height = blockSide + "px";
+		block.style.width = blockSide + "px";
 
 		sketchContainer.appendChild(block);
 	}
