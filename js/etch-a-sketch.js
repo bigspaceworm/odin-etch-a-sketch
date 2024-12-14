@@ -8,9 +8,8 @@ sketchContainer.style.width = GRID_SIDE + "px";
 createGrid(16);
 
 function createGrid(gridSize) {
-	const labelInput = document.querySelector(".gridSize").querySelector("p");
 	let blockSide = GRID_SIDE / gridSize;
-	labelInput.textContent = "Current size: " + gridSize + " x " + gridSize;
+	changeGridInfo(true, gridSize);
 
 	for(let i = 0; i < gridSize * gridSize; i++){
 		const block = document.createElement("div");
@@ -36,12 +35,37 @@ function getGridSize() {
 	return inputField.value;
 }
 
+function isValidGridSize(gridSize) {
+	if(gridSize < 2 || gridSize > 100){
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+function changeGridInfo(validGrid, gridSize){
+	const label = document.querySelector(".gridSize").querySelector("p");
+	
+	if(validGrid){
+	label.textContent = "Current size: " + gridSize + " x " + gridSize;
+	}
+	else{
+		label.textContent = "INVALID SIZE. Valid ranges: 2 - 100."
+	}
+}
+
 const btnGetSize = document.querySelector("#uiContainer").querySelector(".gridSize").querySelector("button");
 
 btnGetSize.addEventListener("click", () => {
-	console.log("DEBUG: button clik")
-	clearGrid();
-	createGrid(getGridSize());
+	let validGrid = isValidGridSize(getGridSize());
+	if(validGrid){
+		clearGrid();
+		createGrid(getGridSize());
+	}
+	else{
+		changeGridInfo(validGrid, 0);
+	}
 });
 
 function gridColorChange(){
