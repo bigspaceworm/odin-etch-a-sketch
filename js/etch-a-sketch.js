@@ -8,11 +8,9 @@ sketchContainer.style.width = GRID_SIDE + "px";
 createGrid(16);
 
 function createGrid(gridSize) {
-	// const containerSize = (gridSize * BLOCK_SIZE);
-
-	// sketchContainer.style.height = containerSize + "px";
-	// sketchContainer.style.width = containerSize + "px";
+	const labelInput = document.querySelector(".gridSize").querySelector("p");
 	let blockSide = GRID_SIDE / gridSize;
+	labelInput.textContent = "Current size: " + gridSize + " x " + gridSize;
 
 	for(let i = 0; i < gridSize * gridSize; i++){
 		const block = document.createElement("div");
