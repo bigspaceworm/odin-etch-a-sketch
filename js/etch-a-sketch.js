@@ -1,11 +1,34 @@
 const BLOCK_SIZE = 15;
 const GRID_SIDE = 550;
+const BLOCK_INIT_OPACITY = 0.1;
+let colorMode = "solid";
 const sketchContainer = document.querySelector("#sketchContainer");
 sketchContainer.style.height = GRID_SIDE + "px";
 sketchContainer.style.width = GRID_SIDE + "px";
 
+const btnOpacity = document.querySelector("#additiveOpacity").querySelector("button");
+const btnSolid = document.querySelector("#solidColor").querySelector("button");
+
 // Initial grid
 createGrid(16);
+
+function gridColorMode() {
+
+	const gridBlocks = sketchContainer.querySelectorAll("div");
+
+	gridBlocks.forEach((div) => {
+		div.addEventListener("mouseover", () => {
+			if(div.style.opacity != 1){
+				if(colorMode === "solid") {
+					div.style.opacity = 1;
+				}
+				else if(colorMode === "opacity") {
+					div.style.opacity = parseFloat(div.style.opacity) + 0.1;
+				}
+			}
+		});
+	});
+}
 
 function createGrid(gridSize) {
 	let blockSide = GRID_SIDE / gridSize;
@@ -14,13 +37,15 @@ function createGrid(gridSize) {
 	for(let i = 0; i < gridSize * gridSize; i++){
 		const block = document.createElement("div");
 		block.classList.add("block");
+		block.classList.add("blockSolidColor");
+		block.style.opacity = BLOCK_INIT_OPACITY;
 		block.style.height = blockSide + "px";
 		block.style.width = blockSide + "px";
 
 		sketchContainer.appendChild(block);
 	}
 
-	gridColorChange();
+	gridColorMode();
 }
 
 function clearGrid() {
@@ -68,14 +93,10 @@ btnGetSize.addEventListener("click", () => {
 	}
 });
 
-function gridColorChange(){
-	const gridBlocks = sketchContainer.querySelectorAll("div");
+btnOpacity.addEventListener("click", () => {
+	colorMode = "opacity";
+});
 
-	gridBlocks.forEach((div) => {
-		div.addEventListener("mouseover", () => {
-			if(div.classList.contains("block")){
-				div.classList.add("blockChangeColor");
-			}
-		});
-	});
-}
+btnSolid.addEventListener("click", () => {
+	colorMode = "solid";
+});
