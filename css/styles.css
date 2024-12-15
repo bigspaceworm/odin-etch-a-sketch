@@ -11,7 +11,6 @@ html {
 
 body {
 	background-color: rgb(50, 50, 50);
-	color: #86ed07;
 	font-family: Roboto, Arial, sans-serif;
 	font-size: 16px;
 	display: flex;
@@ -20,8 +19,6 @@ body {
 }
 
 button {
-	background-color: #204e09;
-	color: #86ed07;
 	font-weight: bolder;
 	border: none;
 	font-size: 18px;
@@ -29,7 +26,12 @@ button {
 	margin-top: 5px;
 }
 
-button:hover {
+.buttonGreenLCD {
+	background-color: #204e09;
+	color: #86ed07;
+}
+
+button.buttonGreenLCD:hover {
 	background-color: #86ed07;
 	color: #204e09;
 }
@@ -43,6 +45,10 @@ button:hover {
 	justify-content: center;
 	background-color: rgb(30, 30, 30);
 	gap: 15px;
+}
+
+.uiContainerGreenLCD {
+	color: #86ed07;
 }
 
 .gridSize {
@@ -60,13 +66,12 @@ button:hover {
 	text-align: center;
 }
 
-.gridSize input {
+.inputGreenLCD {
 	background-color: #86ed07;
 	color: #204e09;
 }
 
 #sketchContainer{
-	background-color: #86ed07;
 	border: 10px;
 	border-style: solid;
 	border-color: rgb(30, 30, 30);
@@ -76,14 +81,17 @@ button:hover {
 	flex: 0 0 auto;
 }
 
-.block {
-	background-color: #6bc600;
-	border: 1px;
+.sketchContainerGreenLCD {
+	background-color: #86ed07;
+}
+
+#sketchContainer div {
+	border-width: 1px;
 	border-style: solid;
-	border-color: #86ed07;
 	box-sizing: border-box;
 }
 
-.blockSolidColor {
+.blockGreenLCD {
+	border-color: #86ed07;
 	background-color: #204e09;
 }
