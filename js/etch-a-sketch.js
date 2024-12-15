@@ -2,16 +2,18 @@ const BLOCK_SIZE = 15;
 const GRID_SIDE = 550;
 const BLOCK_INIT_OPACITY = 0.1;
 let colorMode = "solid";
-// Themes = GreenLCD, BlueLCD, ...
+// Themes = GreenLCD, BlueLCD, GrayLCD, GreenCRT, AmberCRT, WhiteCRT, ...
 let themeColor = "GreenLCD";
 const sketchContainer = document.querySelector("#sketchContainer");
 sketchContainer.style.height = GRID_SIDE + "px";
 sketchContainer.style.width = GRID_SIDE + "px";
 
-// const gridBlocks = sketchContainer.querySelectorAll("div");
+const btnGetSize = document.querySelector("#uiContainer").querySelector(".gridSize").querySelector("button");
 
 const btnOpacity = document.querySelector("#additiveOpacity").querySelector("button");
 const btnSolid = document.querySelector("#solidColor").querySelector("button");
+
+const selectorTheme = document.querySelector("#themes");
 
 // Initial grid
 setUITheme();
@@ -46,6 +48,7 @@ function setUITheme() {
 	const buttons = document.querySelectorAll("button");
 	const uiContainer = document.querySelector("#uiContainer");
 	const inputSizeField = uiContainer.querySelector("input");
+	const select = document.querySelector("#themes");
 
 	buttons.forEach((button) => {
 		button.className = "button" + themeColor;
@@ -53,6 +56,7 @@ function setUITheme() {
 	uiContainer.className = "uiContainer" + themeColor;
 	inputSizeField.className = "input" + themeColor;
 	sketchContainer.className = "sketchContainer" + themeColor;
+	select.className = "input" + themeColor;
 }
 
 function changeTheme() {
@@ -109,7 +113,6 @@ function changeGridInfo(validGrid, gridSize){
 	}
 }
 
-const btnGetSize = document.querySelector("#uiContainer").querySelector(".gridSize").querySelector("button");
 
 btnGetSize.addEventListener("click", () => {
 	let validGrid = isValidGridSize(getGridSize());
@@ -128,4 +131,10 @@ btnOpacity.addEventListener("click", () => {
 
 btnSolid.addEventListener("click", () => {
 	colorMode = "solid";
+});
+
+selectorTheme.addEventListener("change", function () {
+	themeColor = this.value;
+
+	changeTheme();
 });

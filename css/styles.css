@@ -3,6 +3,26 @@ html {
 	box-sizing: border-box;
 }
 
+:root {
+	--greenLCDLight: #86ed07;
+	--greenLCDDark: #204e09;
+
+	--blueLCDLight: #b9e5ff;
+	--blueLCDDark: #2e4f9e;
+
+	--grayLCDLight: #bbc2bd;
+	--grayLCDDark: #44474c;
+
+	--greenCRTLight: #86fcbc;
+	--greenCRTDark: #071b00;
+
+	--amberCRTLight: #fcd20e;
+	--amberCRTDark: #190a05;
+
+	--whiteCRTLight: #b5fbfd;
+	--whiteCRTDark: #111622;
+}
+
 *, *::before, *::after {
 	box-sizing: inherit;
 	margin: 0px;
@@ -10,7 +30,7 @@ html {
 }
 
 body {
-	background-color: rgb(50, 50, 50);
+	background-color: rgb(30, 30, 30);
 	font-family: Roboto, Arial, sans-serif;
 	font-size: 16px;
 	display: flex;
@@ -27,13 +47,63 @@ button {
 }
 
 .buttonGreenLCD {
-	background-color: #204e09;
-	color: #86ed07;
+	background-color: var(--greenLCDDark);
+	color: var(--greenLCDLight);
+}
+
+.buttonBlueLCD {
+	background-color: var(--blueLCDDark);
+	color: var(--blueLCDLight);
+}
+
+.buttonGrayLCD {
+	background-color: var(--grayLCDDark);
+	color: var(--grayLCDLight);
+}
+
+.buttonGreenCRT {
+	background-color: var(--greenCRTDark);
+	color: var(--greenCRTLight);
+}
+
+.buttonAmberCRT {
+	background-color: var(--amberCRTDark);
+	color: var(--amberCRTLight);
+}
+
+.buttonWhiteCRT {
+	background-color: var(--whiteCRTDark);
+	color: var(--whiteCRTLight);
 }
 
 button.buttonGreenLCD:hover {
-	background-color: #86ed07;
-	color: #204e09;
+	background-color: var(--greenLCDLight);
+	color: var(--greenLCDDark);
+}
+
+button.buttonBlueLCD:hover {
+	background-color: var(--blueLCDLight);
+	color: var(--blueLCDDark);
+}
+
+button.buttonGrayLCD:hover {
+	background-color: var(--grayLCDLight);
+	color: var(--grayLCDDark);
+}
+
+button.buttonGreenCRT:hover {
+	background-color: var(--greenCRTLight);
+	color: var(--greenCRTDark);
+}
+
+button.buttonAmberCRT:hover {
+	background-color: var(--amberCRTLight);
+	color: var(--amberCRTDark);
+}
+
+button.buttonWhiteCRT:hover {
+	background-color: var(--whiteCRTLight);
+	color: var(--whiteCRTDark);
 }
 
 #uiContainer {
@@ -43,12 +113,32 @@ button.buttonGreenLCD:hover {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(30, 30, 30);
+	background-color: rgb(10, 10, 10);
 	gap: 15px;
 }
 
 .uiContainerGreenLCD {
-	color: #86ed07;
+	color: var(--greenLCDLight);
+}
+
+.uiContainerBlueLCD {
+	color: var(--blueLCDLight);
+}
+
+.uiContainerGrayLCD {
+	color: var(--grayLCDLight);
+}
+
+.uiContainerGreenCRT {
+	color: var(--greenCRTLight);
+}
+
+.uiContainerAmberCRT {
+	color: var(--amberCRTLight);
+}
+
+.uiContainerWhiteCRT {
+	color: var(--whiteCRTLight);
 }
 
 .gridSize {
@@ -67,14 +157,44 @@ button.buttonGreenLCD:hover {
 }
 
 .inputGreenLCD {
-	background-color: #86ed07;
-	color: #204e09;
+	background-color: var(--greenLCDLight);
+	color: var(--greenLCDDark);
+}
+
+.inputBlueLCD {
+	background-color: var(--blueLCDLight);
+	color: var(--blueLCDDark);
+}
+
+.inputGrayLCD {
+	background-color: var(--grayLCDLight);
+	color: var(--grayLCDDark);
+}
+
+.inputGreenCRT {
+	background-color: var(--greenCRTLight);
+	color: var(--greenCRTDark);
+}
+
+.inputAmberCRT {
+	background-color: var(--amberCRTLight);
+	color: var(--amberCRTDark);
+}
+
+.inputWhiteCRT {
+	background-color: var(--whiteCRTLight);
+	color: var(--whiteCRTDark);
+}
+
+#themes select {
+	font-weight: bold;
+	font-size: 14px;
 }
 
 #sketchContainer{
 	border: 10px;
 	border-style: solid;
-	border-color: rgb(30, 30, 30);
+	border-color: rgb(10, 10, 10);
 	display: flex;
 	flex-wrap: wrap;
 	box-sizing: content-box;
@@ -82,7 +202,27 @@ button.buttonGreenLCD:hover {
 }
 
 .sketchContainerGreenLCD {
-	background-color: #86ed07;
+	background-color: var(--greenLCDLight);
+}
+
+.sketchContainerBlueLCD {
+	background-color: var(--blueLCDDark);
+}
+
+.sketchContainerGrayLCD {
+	background-color: var(--grayLCDLight);
+}
+
+.sketchContainerGreenCRT {
+	background-color: var(--greenCRTDark);
+}
+
+.sketchContainerAmberCRT {
+	background-color: var(--amberCRTDark);
+}
+
+.sketchContainerWhiteCRT {
+	background-color: var(--whiteCRTDark);
 }
 
 #sketchContainer div {
@@ -92,6 +232,31 @@ button.buttonGreenLCD:hover {
 }
 
 .blockGreenLCD {
-	border-color: #86ed07;
-	background-color: #204e09;
+	border-color: var(--greenLCDLight);
+	background-color: var(--greenLCDDark);
+}
+
+.blockBlueLCD {
+	border-color: var(--blueLCDDark);
+	background-color: var(--blueLCDLight);
+}
+
+.blockGrayLCD {
+	border-color: var(--grayLCDLight);
+	background-color: var(--grayLCDDark);
+}
+
+.blockGreenCRT {
+	border-color: var(--greenCRTDark);
+	background-color: var(--greenCRTLight);
+}
+
+.blockAmberCRT {
+	border-color: var(--amberCRTDark);
+	background-color: var(--amberCRTLight);
+}
+
+.blockWhiteCRT {
+	border-color: var(--whiteCRTDark);
+	background-color: var(--whiteCRTLight);
 }
