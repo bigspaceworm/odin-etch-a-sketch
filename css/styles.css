@@ -19,34 +19,7 @@ body {
 	margin: 20px;
 }
 
-#uiContainer {
-	min-width: 250px;
-	width: 250px;
-	display: flex;
-	justify-content: center;
-	background-color: rgb(30, 30, 30);
-}
-
-.gridSize {
-	width: 150px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-
-.gridSize label, 
-.gridSize p{
-	text-align: center;
-}
-
-.gridSize input {
-	background-color: #86ed07;
-	color: #204e09;
-}
-
-.gridSize button {
+button {
 	background-color: #204e09;
 	color: #86ed07;
 	font-weight: bolder;
@@ -56,7 +29,38 @@ body {
 	margin-top: 5px;
 }
 
-.gridSize button:hover {
+button:hover {
+	background-color: #86ed07;
+	color: #204e09;
+}
+
+#uiContainer {
+	min-width: 250px;
+	width: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(30, 30, 30);
+	gap: 15px;
+}
+
+.gridSize {
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.gridSize label, 
+.gridSize p{
+	text-align: center;
+}
+
+.gridSize input {
 	background-color: #86ed07;
 	color: #204e09;
 }
